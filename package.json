@@ -1,0 +1,40 @@
+{
+  "name": "testing-and-debugging-ensuring-mern-app-reliability-ChristineNanu",
+  "version": "1.0.0",
+  "description": "MERN Stack Testing Assignment",
+  "main": "server/src/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "test": "jest --runInBand",
+    "test:unit": "jest --coverage --testPathPattern=\"(client|server)/.*\\.(test|spec)\\.(js|jsx)$\"",
+    "test:integration": "jest --testPathPattern=\"integration.*\\.(test|spec)\\.js$\"",
+    "test:e2e": "npx cypress run",
+    "test:open": "npx cypress open",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.0",
+    "@babel/preset-react": "^7.18.0",
+    "@testing-library/jest-dom": "^5.16.0",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.0",
+    "babel-jest": "^29.0.0",
+    "concurrently": "^7.6.0",
+    "cypress": "^15.6.0",
+    "jest": "^29.0.0",
+    "mongodb-memory-server": "^8.0.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^6.3.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0"
+  }
+}

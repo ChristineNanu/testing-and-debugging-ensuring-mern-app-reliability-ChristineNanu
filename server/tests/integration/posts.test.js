@@ -21,20 +21,20 @@ beforeAll(async () => {
 
   // Create a test user
   const user = await User.create({
-    username: 'testuser',
-    email: 'test@example.com',
-    password: 'password123',
+    username: 'christine',
+    email: 'christine@gmail.com',
+    password: 'password1234',
   });
   userId = user._id;
   token = generateToken(user);
 
   // Create a test post
   const post = await Post.create({
-    title: 'Test Post',
+    title: 'Christinaa',
     content: 'This is a test post content',
     author: userId,
     category: mongoose.Types.ObjectId(),
-    slug: 'test-post',
+    slug: 'christinaa-test-post',
   });
   postId = post._id;
 });
@@ -60,7 +60,7 @@ afterEach(async () => {
 describe('POST /api/posts', () => {
   it('should create a new post when authenticated', async () => {
     const newPost = {
-      title: 'New Test Post',
+      title: 'Christinee',
       content: 'This is a new test post content',
       category: mongoose.Types.ObjectId().toString(),
     };
